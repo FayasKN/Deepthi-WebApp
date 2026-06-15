@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lexend:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #4A90D9;
+  --color-secondary: #F5A623;
+  --color-success: #5CB85C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #FAFBFF;
+  font-family: 'Lexend', sans-serif;
+  /* Prevent text selection (kiosk-friendly) */
+  -webkit-user-select: none;
+  user-select: none;
+  /* Prevent double-tap zoom on touch screens */
+  touch-action: manipulation;
+}
+
+/* Large touch targets — accessibility for autism-friendly UI */
+button {
+  min-height: 80px;
+  min-width: 80px;
+  cursor: pointer;
+}
+
+/* Malayalam font rendering improvement */
+.malayalam {
+  font-family: 'Noto Sans Malayalam', 'Lexend', sans-serif;
+  font-size: 1.1em;
+}
+
+/* Celebration overlay */
+.celebration-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
