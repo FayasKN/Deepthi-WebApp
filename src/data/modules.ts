@@ -37,21 +37,21 @@ export interface ContentItem {
 }
 
 export const animalsData: ContentItem[] = [
-  { id: "lion",     name_en: "Lion",     name_ml: "സിംഹം",   emoji: "🦁", image: "/images/animals/lion.png",     audio_en: "/audio/en/lion.mp3",     audio_ml: "/audio/ml/lion.mp3",     sound: "/audio/sounds/lion.mp3" },
-  { id: "elephant", name_en: "Elephant", name_ml: "ആന",      emoji: "🐘", image: "/images/animals/elephant.png", audio_en: "/audio/en/elephant.mp3", audio_ml: "/audio/ml/elephant.mp3", sound: "/audio/sounds/elephant.mp3" },
-  { id: "tiger",    name_en: "Tiger",    name_ml: "കടുവ",    emoji: "🐯", image: "/images/animals/tiger.png",    audio_en: "/audio/en/tiger.mp3",    audio_ml: "/audio/ml/tiger.mp3",    sound: "/audio/sounds/tiger.mp3" },
-  { id: "dog",      name_en: "Dog",      name_ml: "നായ",      emoji: "🐶", image: "/images/animals/dog.png",      audio_en: "/audio/en/dog.mp3",      audio_ml: "/audio/ml/dog.mp3",      sound: "/audio/sounds/dog.mp3" },
-  { id: "cat",      name_en: "Cat",      name_ml: "പൂച്ച",   emoji: "🐱", image: "/images/animals/cat.png",      audio_en: "/audio/en/cat.mp3",      audio_ml: "/audio/ml/cat.mp3",      sound: "/audio/sounds/cat.mp3" },
-  { id: "cow",      name_en: "Cow",      name_ml: "പശു",      emoji: "🐄", image: "/images/animals/cow.png",      audio_en: "/audio/en/cow.mp3",      audio_ml: "/audio/ml/cow.mp3",      sound: "/audio/sounds/cow.mp3" },
-  { id: "goat",     name_en: "Goat",     name_ml: "ആട്",      emoji: "🐐", image: "/images/animals/goat.png",     audio_en: "/audio/en/goat.mp3",     audio_ml: "/audio/ml/goat.mp3",     sound: "/audio/sounds/goat.mp3" },
-  { id: "horse",    name_en: "Horse",    name_ml: "കുതിര",   emoji: "🐴", image: "/images/animals/horse.png",    audio_en: "/audio/en/horse.mp3",    audio_ml: "/audio/ml/horse.mp3",    sound: "/audio/sounds/horse.mp3" },
-  { id: "rabbit",   name_en: "Rabbit",   name_ml: "മുയൽ",    emoji: "🐰", image: "/images/animals/rabbit.png",   audio_en: "/audio/en/rabbit.mp3",   audio_ml: "/audio/ml/rabbit.mp3"},
-  { id: "monkey",   name_en: "Monkey",   name_ml: "കുരങ്ങ്", emoji: "🐒", image: "/images/animals/monkey.png",   audio_en: "/audio/en/monkey.mp3",   audio_ml: "/audio/ml/monkey.mp3",   sound: "/audio/sounds/monkey.mp3" },
-  { id: "bear",     name_en: "Bear",     name_ml: "കരടി",    emoji: "🐻", image: "/images/animals/bear.png",     audio_en: "/audio/en/bear.mp3",     audio_ml: "/audio/ml/bear.mp3",     sound: "/audio/sounds/bear.mp3" },
-  { id: "zebra",    name_en: "Zebra",    name_ml: "സീബ്ര",   emoji: "🦓", image: "/images/animals/zebra.png",    audio_en: "/audio/en/zebra.mp3",    audio_ml: "/audio/ml/zebra.mp3"},
-  { id: "giraffe",  name_en: "Giraffe",  name_ml: "ജിറാഫ്", emoji: "🦒", image: "/images/animals/giraffe.png",  audio_en: "/audio/en/giraffe.mp3",  audio_ml: "/audio/ml/giraffe.mp3",  sound: "/audio/sounds/giraffe.mp3" },
-  { id: "fish",     name_en: "Fish",     name_ml: "മീൻ",     emoji: "🐟", image: "/images/animals/fish.png",     audio_en: "/audio/en/fish.mp3",     audio_ml: "/audio/ml/fish.mp3"},
-  { id: "frog",     name_en: "Frog",     name_ml: "തവള",     emoji: "🐸", image: "/images/animals/frog.png",     audio_en: "/audio/en/frog.mp3",     audio_ml: "/audio/ml/frog.mp3",     sound: "/audio/sounds/frog.mp3" },
+  { id: "lion",     name_en: "Lion",     name_ml: "സിംഹം",   emoji: "🦁", image: "/images/animals/lion.jpg",     audio_en: "/audio/en/lion.mp3",     audio_ml: "/audio/ml/lion.mp3",     sound: "/audio/sounds/lion.mp3" },
+  { id: "elephant", name_en: "Elephant", name_ml: "ആന",      emoji: "🐘", image: "/images/animals/elephant.jpg", audio_en: "/audio/en/elephant.mp3", audio_ml: "/audio/ml/elephant.mp3", sound: "/audio/sounds/elephant.mp3" },
+  { id: "tiger",    name_en: "Tiger",    name_ml: "കടുവ",    emoji: "🐯", image: "/images/animals/tiger.jpg",    audio_en: "/audio/en/tiger.mp3",    audio_ml: "/audio/ml/tiger.mp3",    sound: "/audio/sounds/tiger.mp3" },
+  { id: "dog",      name_en: "Dog",      name_ml: "നായ",      emoji: "🐶", image: "/images/animals/dog.jpg",      audio_en: "/audio/en/dog.mp3",      audio_ml: "/audio/ml/dog.mp3",      sound: "/audio/sounds/dog.mp3" },
+  { id: "cat",      name_en: "Cat",      name_ml: "പൂച്ച",   emoji: "🐱", image: "/images/animals/cat.jpg",      audio_en: "/audio/en/cat.mp3",      audio_ml: "/audio/ml/cat.mp3",      sound: "/audio/sounds/cat.mp3" },
+  { id: "cow",      name_en: "Cow",      name_ml: "പശു",      emoji: "🐄", image: "/images/animals/cow.jpg",      audio_en: "/audio/en/cow.mp3",      audio_ml: "/audio/ml/cow.mp3",      sound: "/audio/sounds/cow.mp3" },
+  { id: "goat",     name_en: "Goat",     name_ml: "ആട്",      emoji: "🐐", image: "/images/animals/goat.jpg",     audio_en: "/audio/en/goat.mp3",     audio_ml: "/audio/ml/goat.mp3",     sound: "/audio/sounds/goat.mp3" },
+  { id: "horse",    name_en: "Horse",    name_ml: "കുതിര",   emoji: "🐴", image: "/images/animals/horse.jpg",    audio_en: "/audio/en/horse.mp3",    audio_ml: "/audio/ml/horse.mp3",    sound: "/audio/sounds/horse.mp3" },
+  { id: "rabbit",   name_en: "Rabbit",   name_ml: "മുയൽ",    emoji: "🐰", image: "/images/animals/rabbit.jpg",   audio_en: "/audio/en/rabbit.mp3",   audio_ml: "/audio/ml/rabbit.mp3"},
+  { id: "monkey",   name_en: "Monkey",   name_ml: "കുരങ്ങ്", emoji: "🐒", image: "/images/animals/monkey.jpg",   audio_en: "/audio/en/monkey.mp3",   audio_ml: "/audio/ml/monkey.mp3",   sound: "/audio/sounds/monkey.mp3" },
+  { id: "bear",     name_en: "Bear",     name_ml: "കരടി",    emoji: "🐻", image: "/images/animals/bear.jpg",     audio_en: "/audio/en/bear.mp3",     audio_ml: "/audio/ml/bear.mp3",     sound: "/audio/sounds/bear.mp3" },
+  { id: "zebra",    name_en: "Zebra",    name_ml: "സീബ്ര",   emoji: "🦓", image: "/images/animals/zebra.jpg",    audio_en: "/audio/en/zebra.mp3",    audio_ml: "/audio/ml/zebra.mp3"},
+  { id: "giraffe",  name_en: "Giraffe",  name_ml: "ജിറാഫ്", emoji: "🦒", image: "/images/animals/giraffe.jpg",  audio_en: "/audio/en/giraffe.mp3",  audio_ml: "/audio/ml/giraffe.mp3",  sound: "/audio/sounds/giraffe.mp3" },
+  { id: "fish",     name_en: "Fish",     name_ml: "മീൻ",     emoji: "🐟", image: "/images/animals/fish.jpg",     audio_en: "/audio/en/fish.mp3",     audio_ml: "/audio/ml/fish.mp3"},
+  { id: "frog",     name_en: "Frog",     name_ml: "തവള",     emoji: "🐸", image: "/images/animals/frog.jpg",     audio_en: "/audio/en/frog.mp3",     audio_ml: "/audio/ml/frog.mp3",     sound: "/audio/sounds/frog.mp3" },
 ];
 
 export const plantsData: ContentItem[] = [
