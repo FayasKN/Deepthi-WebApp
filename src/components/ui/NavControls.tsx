@@ -51,12 +51,7 @@ export default function NavControls({
         ◀ Previous
       </NavBtn>
 
-      <NavBtn
-        onClick={onRepeat}
-        className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300"
-      >
-        🔁 Repeat
-      </NavBtn>
+     
 
       <NavBtn
         onClick={onNext}

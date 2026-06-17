@@ -30,7 +30,7 @@ export const alphabetDataAE: LessonItem[] = [
     word_en: "Apple",
     word_ml: "ആപ്പിൾ",
     emoji: "🍎",
-    image: "/images/alphabet/apple.png",
+    image: "/images/alphabet/apple.jpg",
     audio_en: "/audio/en/A.mp3",
     audio_ml: "/audio/ml/A.mp3",
     quiz: {
