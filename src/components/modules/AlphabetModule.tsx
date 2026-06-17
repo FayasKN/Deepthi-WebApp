@@ -8,6 +8,7 @@ import NavControls from "@/components/ui/NavControls";
 import ProgressBar from "@/components/ui/ProgressBar";
 import Quiz from "@/components/quiz/Quiz";
 import Celebration from "@/components/animations/Celebration";
+import LessonImage from "@/components/ui/Lessonimage";
 
 interface AlphabetModuleProps {
   onBack: () => void;
@@ -95,14 +96,14 @@ export default function AlphabetModule({ onBack }: AlphabetModuleProps) {
                   {item.letter_ml}
                 </div>
 
-                {/* Image / Emoji */}
-                <motion.div
-                  className="text-9xl"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  {item.emoji}
-                </motion.div>
+               {/* Image with emoji fallback */}
+                <LessonImage
+                  src={item.image}
+                  emoji={item.emoji}
+                  alt={item.word_en}
+                  size="lg"
+                  animate={true}
+                />
 
                 <p className="text-4xl font-display font-bold text-gray-800">{item.word_en}</p>
                 <p className="text-3xl font-display font-semibold text-gray-500 malayalam">{item.word_ml}</p>
