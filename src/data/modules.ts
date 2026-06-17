@@ -55,10 +55,21 @@ export const animalsData: ContentItem[] = [
 ];
 
 export const plantsData: ContentItem[] = [
-  { id: "mango",  name_en: "Mango Tree",  name_ml: "മാവ്",        emoji: "🥭", image: "/images/plants/mango.png",  audio_en: "/audio/en/mango.mp3",  audio_ml: "/audio/ml/mango.mp3" },
-  { id: "banana", name_en: "Banana Tree", name_ml: "വാഴ",         emoji: "🍌", image: "/images/plants/banana.png", audio_en: "/audio/en/banana.mp3", audio_ml: "/audio/ml/banana.mp3" },
-  { id: "rose",   name_en: "Rose",        name_ml: "റോസ്",        emoji: "🌹", image: "/images/plants/rose.png",   audio_en: "/audio/en/rose.mp3",   audio_ml: "/audio/ml/rose.mp3" },
-  { id: "coconut",name_en: "Coconut Tree",name_ml: "തെങ്ങ്",      emoji: "🌴", image: "/images/plants/coconut.png",audio_en: "/audio/en/coconut.mp3",audio_ml: "/audio/ml/coconut.mp3" },
+  { id: "mango",      name_en: "Mango Tree",     name_ml: "മാവ്",        emoji: "🥭", image: "/images/plants/mango.png",      audio_en: "/audio/en/mango.mp3",      audio_ml: "/audio/ml/mango.mp3" },
+  { id: "banana",     name_en: "Banana Tree",    name_ml: "വാഴ",         emoji: "🍌", image: "/images/plants/banana.png",     audio_en: "/audio/en/banana.mp3",     audio_ml: "/audio/ml/banana.mp3" },
+  { id: "rose",       name_en: "Rose",           name_ml: "റോസ്",        emoji: "🌹", image: "/images/plants/rose.png",       audio_en: "/audio/en/rose.mp3",       audio_ml: "/audio/ml/rose.mp3" },
+  { id: "coconut",    name_en: "Coconut Tree",   name_ml: "തെങ്ങ്",      emoji: "🌴", image: "/images/plants/coconut.png",    audio_en: "/audio/en/coconut.mp3",    audio_ml: "/audio/ml/coconut.mp3" },
+  { id: "jackfruit",  name_en: "Jackfruit Tree", name_ml: "പ്ലാവ്",      emoji: "🌳", image: "/images/plants/jackfruit.png",  audio_en: "/audio/en/jackfruit.mp3",  audio_ml: "/audio/ml/jackfruit.mp3" },
+  { id: "papaya",     name_en: "Papaya Tree",    name_ml: "പപ്പായ",      emoji: "🌿", image: "/images/plants/papaya.png",     audio_en: "/audio/en/papaya.mp3",     audio_ml: "/audio/ml/papaya.mp3" },
+  { id: "guava",      name_en: "Guava Tree",     name_ml: "പേര",         emoji: "🍃", image: "/images/plants/guava.png",      audio_en: "/audio/en/guava.mp3",      audio_ml: "/audio/ml/guava.mp3" },
+  { id: "neem",       name_en: "Neem Tree",      name_ml: "വേപ്പ്",      emoji: "🌱", image: "/images/plants/neem.png",       audio_en: "/audio/en/neem.mp3",       audio_ml: "/audio/ml/neem.mp3" },
+  { id: "tulsi",      name_en: "Tulsi Plant",    name_ml: "തുളസി",       emoji: "🌿", image: "/images/plants/tulsi.png",      audio_en: "/audio/en/tulsi.mp3",      audio_ml: "/audio/ml/tulsi.mp3" },
+  { id: "lotus",      name_en: "Lotus",          name_ml: "താമര",        emoji: "🪷", image: "/images/plants/lotus.png",      audio_en: "/audio/en/lotus.mp3",      audio_ml: "/audio/ml/lotus.mp3" },
+  { id: "jasmine",    name_en: "Jasmine",        name_ml: "മുല്ല",       emoji: "🌸", image: "/images/plants/jasmine.png",    audio_en: "/audio/en/jasmine.mp3",    audio_ml: "/audio/ml/jasmine.mp3" },
+  { id: "sunflower",  name_en: "Sunflower",      name_ml: "സൂര്യകാന്തി", emoji: "🌻", image: "/images/plants/sunflower.png",  audio_en: "/audio/en/sunflower.mp3",  audio_ml: "/audio/ml/sunflower.mp3" },
+  { id: "bamboo",     name_en: "Bamboo",         name_ml: "മുള",         emoji: "🎍", image: "/images/plants/bamboo.png",     audio_en: "/audio/en/bamboo.mp3",     audio_ml: "/audio/ml/bamboo.mp3" },
+  { id: "peepal",     name_en: "Peepal Tree",    name_ml: "അരയാൽ",      emoji: "🌳", image: "/images/plants/peepal.png",     audio_en: "/audio/en/peepal.mp3",     audio_ml: "/audio/ml/peepal.mp3" },
+  { id: "cactus",     name_en: "Cactus",         name_ml: "കള്ളിമുള്ള്", emoji: "🌵", image: "/images/plants/cactus.png",     audio_en: "/audio/en/cactus.mp3",     audio_ml: "/audio/ml/cactus.mp3" },
 ];
 
 export interface RoutineItem {
