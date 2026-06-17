@@ -7,6 +7,7 @@ import AudioButton from "@/components/ui/AudioButton";
 import NavControls from "@/components/ui/NavControls";
 import ProgressBar from "@/components/ui/ProgressBar";
 import Celebration from "@/components/animations/Celebration";
+import LessonImage from "@/components/ui/Lessonimage";
 
 type Item = ContentItem | RoutineItem;
 
@@ -71,13 +72,14 @@ export default function GenericModule({
             className="flex flex-col items-center gap-6 w-full max-w-xl text-center"
           >
             {/* Emoji / image */}
-            <motion.div
-              className="text-[9rem]"
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              {item.emoji}
-            </motion.div>
+            {/* Image with emoji fallback */}
+            <LessonImage
+              src={item.image}
+              emoji={item.emoji}
+              alt={name_en}
+              size="lg"
+              animate={true}
+            />
 
             <p className="text-5xl font-display font-black text-gray-800">{name_en}</p>
             <p className="text-4xl malayalam font-display font-bold text-gray-500">{name_ml}</p>
