@@ -84,18 +84,36 @@ export interface RoutineItem {
 }
 
 export const routineData: RoutineItem[] = [
-  { id: "brush",    action_en: "Brush Your Teeth",  action_ml: "പല്ല് തേക്കുക",      emoji: "🪥", image: "/images/routine/brush.png",    audio_en: "/audio/en/brush.mp3",    audio_ml: "/audio/ml/brush.mp3" },
-  { id: "wash",     action_en: "Wash Your Hands",   action_ml: "കൈ കഴുകുക",          emoji: "🧼", image: "/images/routine/wash.png",     audio_en: "/audio/en/wash.mp3",     audio_ml: "/audio/ml/wash.mp3" },
-  { id: "eat",      action_en: "Eat Your Food",     action_ml: "ഭക്ഷണം കഴിക്കുക",    emoji: "🍽️", image: "/images/routine/eat.png",      audio_en: "/audio/en/eat.mp3",      audio_ml: "/audio/ml/eat.mp3" },
-  { id: "sleep",    action_en: "Sleep on Time",     action_ml: "സമയത്ത് ഉറങ്ങുക",    emoji: "😴", image: "/images/routine/sleep.png",    audio_en: "/audio/en/sleep.mp3",    audio_ml: "/audio/ml/sleep.mp3" },
-  { id: "exercise", action_en: "Do Exercise",       action_ml: "വ്യായാമം ചെയ്യുക",    emoji: "🏃", image: "/images/routine/exercise.png", audio_en: "/audio/en/exercise.mp3", audio_ml: "/audio/ml/exercise.mp3" },
+  // ── Morning ─────────────────────────────────────────────────────────────────
+  { id: "wakeup",   action_en: "Wake Up Early",     action_ml: "നേരത്തെ എഴുന്നേൽക്കുക",  emoji: "🌅", image: "/images/routine/wakeup.png",   audio_en: "/audio/en/wakeup.mp3",   audio_ml: "/audio/ml/wakeup.mp3" },
+  { id: "brush",    action_en: "Brush Your Teeth",  action_ml: "പല്ല് തേക്കുക",           emoji: "🪥", image: "/images/routine/brush.png",    audio_en: "/audio/en/brush.mp3",    audio_ml: "/audio/ml/brush.mp3" },
+  { id: "bath",     action_en: "Take a Bath",       action_ml: "കുളിക്കുക",               emoji: "🚿", image: "/images/routine/bath.png",     audio_en: "/audio/en/bath.mp3",     audio_ml: "/audio/ml/bath.mp3" },
+  { id: "dress",    action_en: "Wear Clean Clothes",action_ml: "വൃത്തിയുള്ള വസ്ത്രം ധരിക്കുക", emoji: "👕", image: "/images/routine/dress.png",    audio_en: "/audio/en/dress.mp3",    audio_ml: "/audio/ml/dress.mp3" },
+  // ── Afternoon ───────────────────────────────────────────────────────────────
+  { id: "wash",     action_en: "Wash Your Hands",   action_ml: "കൈ കഴുകുക",              emoji: "🧼", image: "/images/routine/wash.png",     audio_en: "/audio/en/wash.mp3",     audio_ml: "/audio/ml/wash.mp3" },
+  { id: "eat",      action_en: "Eat Your Food",     action_ml: "ഭക്ഷണം കഴിക്കുക",        emoji: "🍽️", image: "/images/routine/eat.png",      audio_en: "/audio/en/eat.mp3",      audio_ml: "/audio/ml/eat.mp3" },
+  { id: "rest",     action_en: "Take Rest",         action_ml: "വിശ്രമിക്കുക",            emoji: "🛋️", image: "/images/routine/rest.png",     audio_en: "/audio/en/rest.mp3",     audio_ml: "/audio/ml/rest.mp3" },
+  // ── Evening ─────────────────────────────────────────────────────────────────
+  { id: "exercise", action_en: "Do Exercise",       action_ml: "വ്യായാമം ചെയ്യുക",        emoji: "🏃", image: "/images/routine/exercise.png", audio_en: "/audio/en/exercise.mp3", audio_ml: "/audio/ml/exercise.mp3" },
+  { id: "study",    action_en: "Do Your Homework",  action_ml: "ഹോംവർക്ക് ചെയ്യുക",     emoji: "📚", image: "/images/routine/study.png",    audio_en: "/audio/en/study.mp3",    audio_ml: "/audio/ml/study.mp3" },
+  // ── Night ───────────────────────────────────────────────────────────────────
+  { id: "sleep",    action_en: "Sleep on Time",     action_ml: "സമയത്ത് ഉറങ്ങുക",        emoji: "😴", image: "/images/routine/sleep.png",    audio_en: "/audio/en/sleep.mp3",    audio_ml: "/audio/ml/sleep.mp3" },
 ];
 
 export const mannersData: RoutineItem[] = [
-  { id: "thankyou", action_en: "Say Thank You",      action_ml: "നന്ദി പറയുക",       emoji: "🙏", image: "/images/manners/thankyou.png", audio_en: "/audio/en/thankyou.mp3", audio_ml: "/audio/ml/thankyou.mp3" },
-  { id: "sorry",    action_en: "Say Sorry",          action_ml: "ക്ഷമ ചോദിക്കുക",    emoji: "😔", image: "/images/manners/sorry.png",    audio_en: "/audio/en/sorry.mp3",    audio_ml: "/audio/ml/sorry.mp3" },
-  { id: "greet",    action_en: "Greet Elders",       action_ml: "മൂത്തവരെ ബഹുമാനിക്കുക", emoji: "🤝", image: "/images/manners/greet.png",    audio_en: "/audio/en/greet.mp3",    audio_ml: "/audio/ml/greet.mp3" },
-  { id: "share",    action_en: "Share with Friends", action_ml: "കൂട്ടുകാരുമായി പങ്കിടുക", emoji: "🤲", image: "/images/manners/share.png",    audio_en: "/audio/en/share.mp3",    audio_ml: "/audio/ml/share.mp3" },
+  // ── Home ────────────────────────────────────────────────────────────────────
+  { id: "thankyou",  action_en: "Say Thank You",         action_ml: "നന്ദി പറയുക",                    emoji: "🙏", image: "/images/manners/thankyou.png",  audio_en: "/audio/en/thankyou.mp3",  audio_ml: "/audio/ml/thankyou.mp3" },
+  { id: "sorry",     action_en: "Say Sorry",             action_ml: "ക്ഷമ ചോദിക്കുക",               emoji: "😔", image: "/images/manners/sorry.png",     audio_en: "/audio/en/sorry.mp3",     audio_ml: "/audio/ml/sorry.mp3" },
+  { id: "greet",     action_en: "Greet Elders",          action_ml: "മൂത്തവരെ ബഹുമാനിക്കുക",         emoji: "🤝", image: "/images/manners/greet.png",     audio_en: "/audio/en/greet.mp3",     audio_ml: "/audio/ml/greet.mp3" },
+  { id: "share",     action_en: "Share with Friends",    action_ml: "കൂട്ടുകാരുമായി പങ്കിടുക",       emoji: "🤲", image: "/images/manners/share.png",     audio_en: "/audio/en/share.mp3",     audio_ml: "/audio/ml/share.mp3" },
+  // ── School ──────────────────────────────────────────────────────────────────
+  { id: "listen",    action_en: "Listen to Teacher",     action_ml: "അധ്യാപകരെ ശ്രദ്ധിക്കുക",        emoji: "👂", image: "/images/manners/listen.png",    audio_en: "/audio/en/listen.mp3",    audio_ml: "/audio/ml/listen.mp3" },
+  { id: "quiet",     action_en: "Stay Quiet in Class",   action_ml: "ക്ലാസ്സിൽ ശാന്തമായിരിക്കുക",   emoji: "🤫", image: "/images/manners/quiet.png",     audio_en: "/audio/en/quiet.mp3",     audio_ml: "/audio/ml/quiet.mp3" },
+  { id: "nofight",   action_en: "Do Not Fight",          action_ml: "വഴക്കിടരുത്",                   emoji: "🚫", image: "/images/manners/nofight.png",   audio_en: "/audio/en/nofight.mp3",   audio_ml: "/audio/ml/nofight.mp3" },
+  // ── Public ──────────────────────────────────────────────────────────────────
+  { id: "queue",     action_en: "Stand in Queue",        action_ml: "നിരയിൽ നിൽക്കുക",               emoji: "🚶", image: "/images/manners/queue.png",     audio_en: "/audio/en/queue.mp3",     audio_ml: "/audio/ml/queue.mp3" },
+  { id: "litter",    action_en: "Do Not Litter",         action_ml: "മാലിന്യം വലിച്ചെറിയരുത്",      emoji: "🗑️", image: "/images/manners/litter.png",    audio_en: "/audio/en/litter.mp3",    audio_ml: "/audio/ml/litter.mp3" },
+  { id: "help",      action_en: "Help Others",           action_ml: "മറ്റുള്ളവരെ സഹായിക്കുക",        emoji: "🫂", image: "/images/manners/help.png",      audio_en: "/audio/en/help.mp3",      audio_ml: "/audio/ml/help.mp3" },
 ];
 
 // Module registry — used by Home screen and routing
