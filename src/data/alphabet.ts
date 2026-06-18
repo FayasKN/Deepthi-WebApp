@@ -12,6 +12,7 @@ export interface LessonItem {
   image: string;         // path from /public e.g. /images/alphabet/apple.png
   audio_en: string;      // path from /public e.g. /audio/en/A.mp3
   audio_ml: string;
+  audio_rp: string;
   quiz: {
     question_en: string;
     question_ml: string;
@@ -33,6 +34,7 @@ export const alphabetDataAE: LessonItem[] = [
     image: "/images/alphabet/apple.jpg",
     audio_en: "/audio/en/A.mp3",
     audio_ml: "/audio/ml/A.mp3",
+    audio_rp: "/audio/rp/A.mp3",
     quiz: {
       question_en: "Which one is Apple?",
       question_ml: "ഏതാണ് ആപ്പിൾ?",
@@ -47,9 +49,10 @@ export const alphabetDataAE: LessonItem[] = [
     word_en: "Ball",
     word_ml: "പന്ത്",
     emoji: "⚽",
-    image: "/images/alphabet/ball.png",
+    image: "/images/alphabet/ball.jpg",
     audio_en: "/audio/en/B.mp3",
     audio_ml: "/audio/ml/B.mp3",
+    audio_rp: "/audio/rp/B.mp3",
     quiz: {
       question_en: "Which one is a Ball?",
       question_ml: "ഏതാണ് പന്ത്?",
@@ -64,9 +67,10 @@ export const alphabetDataAE: LessonItem[] = [
     word_en: "Cat",
     word_ml: "പൂച്ച",
     emoji: "🐱",
-    image: "/images/alphabet/cat.png",
+    image: "/images/alphabet/cat.jpg",
     audio_en: "/audio/en/C.mp3",
     audio_ml: "/audio/ml/C.mp3",
+    audio_rp: "/audio/rp/C.mp3",
     quiz: {
       question_en: "Which one is a Cat?",
       question_ml: "ഏതാണ് പൂച്ച?",
@@ -81,9 +85,10 @@ export const alphabetDataAE: LessonItem[] = [
     word_en: "Dog",
     word_ml: "നായ",
     emoji: "🐶",
-    image: "/images/alphabet/dog.png",
+    image: "/images/alphabet/dog.jpg",
     audio_en: "/audio/en/D.mp3",
     audio_ml: "/audio/ml/D.mp3",
+    audio_rp: "/audio/rp/D.mp3",
     quiz: {
       question_en: "Which one is a Dog?",
       question_ml: "ഏതാണ് നായ?",
@@ -98,9 +103,10 @@ export const alphabetDataAE: LessonItem[] = [
     word_en: "Elephant",
     word_ml: "ആന",
     emoji: "🐘",
-    image: "/images/alphabet/elephant.png",
+    image: "/images/alphabet/elephant.jpg",
     audio_en: "/audio/en/E.mp3",
     audio_ml: "/audio/ml/E.mp3",
+    audio_rp: "/audio/rp/E.mp3",
     quiz: {
       question_en: "Which one is an Elephant?",
       question_ml: "ഏതാണ് ആന?",
