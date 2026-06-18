@@ -132,7 +132,7 @@ export default function AlphabetModule({ onBack }: AlphabetModuleProps) {
                 >
                   🎤 Repeat After Me
                 </motion.div>
-                <AudioButton src={item.audio_en} label="🔊 Play Again" lang="en" />
+                <AudioButton src={item.audio_rp} label="🔊 Play Again" lang="en" />
               </div>
             )}
 
