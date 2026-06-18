@@ -83,7 +83,7 @@ export const alphabetDataFZ: LessonItem[] = [
     letter_ml: "ജ",
     word_en: "Jug",
     word_ml: "കുടം",
-    emoji: "🫙",
+    emoji: "🍶",
     image: "/images/alphabet/jug.jpg",
     audio_en: "/audio/en/J.mp3",
     audio_ml: "/audio/ml/J.mp3",
@@ -91,8 +91,8 @@ export const alphabetDataFZ: LessonItem[] = [
     quiz: {
       question_en: "Which one is a Jug?",
       question_ml: "ഏതാണ് കുടം?",
-      options: ["🫙", "🐱", "🍎", "🌺"],
-      answer: "🫙",
+      options: ["🍶", "🐱", "🍎", "🌺"],
+      answer: "🍶",
     },
   },
   {
@@ -209,7 +209,7 @@ export const alphabetDataFZ: LessonItem[] = [
     letter_ml: "ക്വ",
     word_en: "Queen",
     word_ml: "രാജ്ഞി",
-    emoji: "👑",
+    emoji: "👸",
     image: "/images/alphabet/queen.jpg",
     audio_en: "/audio/en/Q.mp3",
     audio_ml: "/audio/ml/Q.mp3",
@@ -217,8 +217,8 @@ export const alphabetDataFZ: LessonItem[] = [
     quiz: {
       question_en: "Which one is a Queen?",
       question_ml: "ഏതാണ് രാജ്ഞി?",
-      options: ["👑", "🐟", "🥭", "🚗"],
-      answer: "👑",
+      options: ["👸", "🐟", "🥭", "🚗"],
+      answer: "👸",
     },
   },
   {
