@@ -17,25 +17,18 @@ export default function NumbersModule({ onBack }: NumbersModuleProps) {
   const [showCelebration, setShowCelebration] = useState(false);
   const [quizAnswer, setQuizAnswer] = useState<number | null>(null);
   const [quizResult, setQuizResult] = useState<"correct" | "wrong" | null>(null);
+  // FIX: lock all interaction while celebration is playing
+  const [locked, setLocked] = useState(false);
 
   const item = numbersData[index];
   const isLast = index === numbersData.length - 1;
 
-  const handleQuizAnswer = (num: number) => {
-    if (quizAnswer !== null) return;
-    setQuizAnswer(num);
-    if (num === item.quiz.answer) {
-      setQuizResult("correct");
-      setShowCelebration(true);
-    } else {
-      setQuizResult("wrong");
-      setTimeout(() => { setQuizAnswer(null); setQuizResult(null); }, 1200);
-    }
-  };
-
-  const goNext = useCallback(() => {
+  // FIX: always reset quiz state BEFORE changing index so new number never
+  //      inherits the previous answer
+  const advanceToNext = useCallback(() => {
     setQuizAnswer(null);
     setQuizResult(null);
+    setLocked(false);
     if (isLast) {
       onBack();
     } else {
@@ -43,11 +36,32 @@ export default function NumbersModule({ onBack }: NumbersModuleProps) {
     }
   }, [isLast, onBack]);
 
+  const handleQuizAnswer = (num: number) => {
+    // FIX: block clicks while locked (celebration playing) or already answered
+    if (quizAnswer !== null || locked) return;
+    setQuizAnswer(num);
+    if (num === item.quiz.answer) {
+      setQuizResult("correct");
+      setLocked(true);          // FIX: lock Next button immediately
+      setShowCelebration(true);
+    } else {
+      setQuizResult("wrong");
+      setTimeout(() => { setQuizAnswer(null); setQuizResult(null); }, 1200);
+    }
+  };
+
+  // FIX: goNext only allowed when not locked (i.e. no celebration playing)
+  const goNext = useCallback(() => {
+    if (locked) return;
+    advanceToNext();
+  }, [locked, advanceToNext]);
+
   const goPrev = () => {
+    if (locked) return;
     if (index > 0) {
-      setIndex((i) => i - 1);
       setQuizAnswer(null);
       setQuizResult(null);
+      setIndex((i) => i - 1);
     }
   };
 
@@ -116,14 +130,17 @@ export default function NumbersModule({ onBack }: NumbersModuleProps) {
                   <motion.button
                     key={opt}
                     onClick={() => handleQuizAnswer(opt)}
+                    // FIX: visually disable all buttons once locked
+                    disabled={locked && quizAnswer !== opt}
                     className={`
                       rounded-xl2 py-6 text-5xl font-display font-black shadow
                       border-4 transition-all
                       ${quizAnswer === opt && quizResult === "correct" ? "border-success bg-green-100" : ""}
                       ${quizAnswer === opt && quizResult === "wrong" ? "border-red-500 bg-red-50" : ""}
                       ${quizAnswer === null ? "border-gray-200 bg-white hover:border-primary" : ""}
+                      ${locked && quizAnswer !== opt ? "opacity-30 cursor-not-allowed" : ""}
                     `}
-                    whileTap={{ scale: 0.92 }}
+                    whileTap={{ scale: locked ? 1 : 0.92 }}
                     animate={quizAnswer === opt && quizResult === "wrong" ? { x: [-6, 6, -6, 6, 0] } : {}}
                   >
                     {opt}
@@ -139,16 +156,26 @@ export default function NumbersModule({ onBack }: NumbersModuleProps) {
         <NavControls
           onPrev={goPrev}
           onNext={goNext}
-          onRepeat={() => { setQuizAnswer(null); setQuizResult(null); }}
+          onRepeat={() => {
+            if (locked) return;
+            setQuizAnswer(null);
+            setQuizResult(null);
+          }}
           hasPrev={index > 0}
-          hasNext={true}
+          // FIX: disable Next visually while celebration is playing
+          hasNext={!locked}
         />
       </div>
 
       <Celebration
         show={showCelebration}
         type="quiz"
-        onDone={() => { setShowCelebration(false); goNext(); }}
+        // FIX: celebration is the ONLY thing that calls advanceToNext after correct answer
+        //      goNext is blocked (locked=true) so there's no double-advance
+        onDone={() => {
+          setShowCelebration(false);
+          advanceToNext();
+        }}
       />
     </div>
   );
