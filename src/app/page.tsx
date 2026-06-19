@@ -56,7 +56,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          🌟 Deepthi Learning Hub
+          Deepthi Learning Hub
         </motion.h1>
         <motion.p
           className="text-2xl text-gray-500 mt-2 malayalam"
@@ -94,6 +94,8 @@ export default function Home() {
 }
 
 function ModuleCard({ module, index, onClick }: { module: Module; index: number; onClick: () => void }) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <motion.button
       onClick={onClick}
@@ -109,6 +111,18 @@ function ModuleCard({ module, index, onClick }: { module: Module; index: number;
         min-h-[180px] w-full
       `}
     >
+       {/* Image — falls back to emoji if file missing */}
+      {!imgError ? (
+        <img
+          src={module.image}
+          alt={module.title_en}
+          onError={() => setImgError(true)}
+          className="w-28 h-28 object-contain drop-shadow-md rounded-xl"
+        />
+      ) : (
+        <span className="text-7xl">{module.emoji}</span>
+      )}
+
       <span className="text-7xl">{module.emoji}</span>
       <div className="text-center">
         <p className="font-display font-black text-2xl leading-tight">{module.title_en}</p>

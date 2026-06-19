@@ -124,15 +124,16 @@ export interface Module {
   title_en: string;
   title_ml: string;
   emoji: string;
+  image: string;
   color: string;   // Tailwind bg class
   textColor: string;
 }
 
 export const MODULES: Module[] = [
-  { id: "alphabet", title_en: "Alphabet",       title_ml: "അക്ഷരമാല",     emoji: "🔤", color: "bg-module-alphabet", textColor: "text-white" },
-  { id: "numbers",  title_en: "Numbers",        title_ml: "അക്കങ്ങൾ",     emoji: "🔢", color: "bg-module-numbers",  textColor: "text-white" },
-  { id: "animals",  title_en: "Animals",        title_ml: "മൃഗങ്ങൾ",     emoji: "🐘", color: "bg-module-animals",  textColor: "text-white" },
-  { id: "plants",   title_en: "Plants",         title_ml: "സസ്യങ്ങൾ",    emoji: "🌿", color: "bg-module-plants",   textColor: "text-white" },
-  { id: "routine",  title_en: "Daily Routine",  title_ml: "ദൈനദിന ദിനചര്യ", emoji: "🚿", color: "bg-module-routine",  textColor: "text-white" },
-  { id: "manners",  title_en: "Good Manners",   title_ml: "നല്ല മര്യാദ",   emoji: "🙏", color: "bg-module-manners",  textColor: "text-white" },
+  { id: "alphabet", title_en: "Alphabet",       title_ml: "അക്ഷരമാല",     emoji: "", color: "bg-module-alphabet", textColor: "text-white", image: "/images/modules/alphabet.png" },
+  { id: "numbers",  title_en: "Numbers",        title_ml: "അക്കങ്ങൾ",     emoji: "", color: "bg-module-numbers",  textColor: "text-white", image: "/images/modules/numbers.png" },
+  { id: "animals",  title_en: "Animals",        title_ml: "മൃഗങ്ങൾ",     emoji: "", color: "bg-module-animals",  textColor: "text-white", image: "/images/modules/animals.png" },
+  { id: "plants",   title_en: "Plants",         title_ml: "സസ്യങ്ങൾ",    emoji: "", color: "bg-module-plants",   textColor: "text-white", image: "/images/modules/plants.png" },
+  { id: "routine",  title_en: "Daily Routine",  title_ml: "ദൈനദിന ദിനചര്യ", emoji: "", color: "bg-module-routine",  textColor: "text-white", image: "/images/modules/routine.png" },
+  { id: "manners",  title_en: "Good Manners",   title_ml: "നല്ല മര്യാദ",   emoji: "", color: "bg-module-manners",  textColor: "text-white", image: "/images/modules/manners.png" },
 ];
