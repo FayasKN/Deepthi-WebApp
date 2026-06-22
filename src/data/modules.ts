@@ -116,8 +116,92 @@ export const mannersData: RoutineItem[] = [
   { id: "help",      action_en: "Help Others",           action_ml: "മറ്റുള്ളവരെ സഹായിക്കുക",        emoji: "🫂", image: "/images/manners/help.png",      audio_en: "/audio/en/help.mp3",      audio_ml: "/audio/ml/help.mp3" },
 ];
 
+// ── Addition Data ─────────────────────────────────────────────────────────────
+export interface AdditionItem {
+  id: string;
+  a: number;
+  b: number;
+  answer: number;
+  options: number[];   // 4 choices including answer
+}
+ 
+function addQ(a: number, b: number, wrongs: number[]): AdditionItem {
+  return { id: `${a}+${b}`, a, b, answer: a + b, options: shuffle([a + b, ...wrongs]) };
+}
+ 
+function shuffle(arr: number[]) {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+ 
+export const additionData: AdditionItem[] = [
+  addQ(1, 1, [3, 4, 5]),
+  addQ(1, 2, [2, 4, 5]),
+  addQ(2, 2, [3, 5, 6]),
+  addQ(1, 3, [3, 5, 6]),
+  addQ(2, 3, [4, 6, 7]),
+  addQ(3, 3, [5, 7, 8]),
+  addQ(1, 4, [4, 6, 7]),
+  addQ(2, 4, [5, 7, 8]),
+  addQ(3, 4, [6, 8, 9]),
+  addQ(4, 4, [7, 9, 10]),
+  addQ(1, 5, [5, 7, 8]),
+  addQ(2, 5, [6, 8, 9]),
+  addQ(3, 5, [7, 9, 10]),
+  addQ(4, 5, [8, 10, 11]),
+  addQ(5, 5, [9, 11, 12]),
+  addQ(1, 6, [6, 8, 9]),
+  addQ(2, 6, [7, 9, 10]),
+  addQ(3, 6, [8, 10, 11]),
+  addQ(4, 6, [9, 11, 12]),
+  addQ(5, 6, [10, 12, 13]),
+  addQ(1, 7, [7, 9, 10]),
+  addQ(2, 7, [8, 10, 11]),
+  addQ(3, 7, [9, 11, 12]),
+  addQ(4, 7, [10, 12, 13]),
+  addQ(5, 7, [11, 13, 14]),
+  addQ(1, 8, [8, 10, 11]),
+  addQ(2, 8, [9, 11, 12]),
+  addQ(3, 8, [10, 12, 13]),
+  addQ(4, 8, [11, 13, 14]),
+  addQ(5, 8, [12, 14, 15]),
+  addQ(1, 9, [9, 11, 12]),
+  addQ(2, 9, [10, 12, 13]),
+  addQ(3, 9, [11, 13, 14]),
+  addQ(4, 9, [12, 14, 15]),
+  addQ(5, 9, [13, 15, 16]),
+  addQ(1, 10, [10, 12, 13]),
+  addQ(2, 10, [11, 13, 14]),
+  addQ(3, 10, [12, 14, 15]),
+  addQ(4, 10, [13, 15, 16]),
+  addQ(5, 10, [14, 16, 17]),
+];
+ 
+// ── Vehicles Data ─────────────────────────────────────────────────────────────
+export interface VehicleItem {
+  id: string;
+  name_en: string;
+  emoji: string;
+  image: string;
+  audio_en: string;   // English only — no Malayalam
+}
+ 
+export const vehiclesData: VehicleItem[] = [
+  { id: "car",        name_en: "Car",         emoji: "🚗", image: "/images/vehicles/car.png",        audio_en: "/audio/en/car.mp3" },
+  { id: "bus",        name_en: "Bus",         emoji: "🚌", image: "/images/vehicles/bus.png",        audio_en: "/audio/en/bus.mp3" },
+  { id: "train",      name_en: "Train",       emoji: "🚂", image: "/images/vehicles/train.png",      audio_en: "/audio/en/train.mp3" },
+  { id: "bicycle",    name_en: "Bicycle",     emoji: "🚲", image: "/images/vehicles/bicycle.png",    audio_en: "/audio/en/bicycle.mp3" },
+  { id: "truck",      name_en: "Truck",       emoji: "🚚", image: "/images/vehicles/truck.png",      audio_en: "/audio/en/truck.mp3" },
+  { id: "airplane",   name_en: "Airplane",    emoji: "✈️", image: "/images/vehicles/airplane.png",   audio_en: "/audio/en/airplane.mp3" },
+  { id: "boat",       name_en: "Boat",        emoji: "⛵", image: "/images/vehicles/boat.png",       audio_en: "/audio/en/boat.mp3" },
+  { id: "ambulance",  name_en: "Ambulance",   emoji: "🚑", image: "/images/vehicles/ambulance.png",  audio_en: "/audio/en/ambulance.mp3" },
+  { id: "firetruck",  name_en: "Fire Truck",  emoji: "🚒", image: "/images/vehicles/firetruck.png",  audio_en: "/audio/en/firetruck.mp3" },
+  { id: "helicopter", name_en: "Helicopter",  emoji: "🚁", image: "/images/vehicles/helicopter.png", audio_en: "/audio/en/helicopter.mp3" },
+  { id: "motorcycle", name_en: "Motorcycle",  emoji: "🏍️", image: "/images/vehicles/motorcycle.png", audio_en: "/audio/en/motorcycle.mp3" },
+  { id: "tractor",    name_en: "Tractor",     emoji: "🚜", image: "/images/vehicles/tractor.png",    audio_en: "/audio/en/tractor.mp3" },
+];
+
 // Module registry — used by Home screen and routing
-export type ModuleId = "alphabet" | "numbers" | "animals" | "plants" | "routine" | "manners";
+export type ModuleId = "alphabet" | "numbers" | "animals" | "plants" | "routine" | "manners" | "addition" | "vehicles";
 
 export interface Module {
   id: ModuleId;
@@ -136,4 +220,6 @@ export const MODULES: Module[] = [
   { id: "plants",   title_en: "Plants",         title_ml: "സസ്യങ്ങൾ",    emoji: "", color: "bg-module-plants",   textColor: "text-white", image: "/images/modules/plants.png" },
   { id: "routine",  title_en: "Daily Routine",  title_ml: "ദൈനദിന ദിനചര്യ", emoji: "", color: "bg-module-routine",  textColor: "text-white", image: "/images/modules/routine.png" },
   { id: "manners",  title_en: "Good Manners",   title_ml: "നല്ല മര്യാദ",   emoji: "", color: "bg-module-manners",  textColor: "text-white", image: "/images/modules/manners.png" },
+  { id: "addition", title_en: "Addition",       title_ml: "കൂട്ടൽ",      emoji: "", color: "bg-module-addition", textColor: "text-white", image: "/images/modules/addition.png" },
+  { id: "vehicles", title_en: "Vehicles",       title_ml: "വാഹനങ്ങൾ",    emoji: "", color: "bg-module-vehicles", textColor: "text-white", image: "/images/modules/vehicles.png" },
 ];
