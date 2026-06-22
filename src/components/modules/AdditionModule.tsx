@@ -54,11 +54,11 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
   return (
     <div className="min-h-screen bg-pink-50 flex flex-col">
       {/* Header */}
-      <div className="bg-module-addition text-white px-8 py-5 flex items-center justify-between shadow-md">
+      <div className="bg-module-addition text-white px-4 md:px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md">
         <button onClick={onBack} className="text-white text-2xl font-bold opacity-80 hover:opacity-100 min-h-0 min-w-0 px-3 py-2">
           ← Back
         </button>
-        <h1 className="font-display font-black text-3xl">➕ Addition / കൂട്ടൽ</h1>
+        <h1 className="font-display font-black text-3xl">Addition / കൂട്ടൽ</h1>
         <div className="w-24" />
       </div>
 
@@ -79,7 +79,19 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
           >
             {/* Equation display */}
             <motion.div
-              className="bg-white rounded-xl3 border-4 border-module-addition shadow-xl px-12 py-8 flex items-center gap-6"
+  className="
+    bg-white
+    rounded-xl3
+    border-4 border-module-addition
+    shadow-xl
+    px-4 sm:px-6 md:px-12
+    py-6 md:py-8
+    flex flex-col sm:flex-row
+    items-center
+    gap-4 md:gap-6
+    w-full
+    max-w-full
+  "
               animate={locked ? { scale: [1, 1.04, 1] } : {}}
               transition={{ duration: 0.5 }}
             >
@@ -114,7 +126,7 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
 
             {/* Question */}
             <p className="text-2xl font-display font-bold text-gray-600">
-              What is {item.a} + {item.b} = ?
+              What is {item.a} + {item.b}? / {item.a} + {item.b} = ?
             </p>
 
             {/* Option buttons */}

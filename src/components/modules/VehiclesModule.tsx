@@ -35,11 +35,11 @@ export default function VehiclesModule({ onBack }: VehiclesModuleProps) {
   return (
     <div className="min-h-screen bg-teal-50 flex flex-col">
       {/* Header */}
-      <div className="bg-module-vehicles text-white px-8 py-5 flex items-center justify-between shadow-md">
+      <div className="bg-module-addition text-white px-4 md:px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md">
         <button onClick={onBack} className="text-white text-2xl font-bold opacity-80 hover:opacity-100 min-h-0 min-w-0 px-3 py-2">
           ← Back
         </button>
-        <h1 className="font-display font-black text-3xl">🚗 Vehicles / വാഹനങ്ങൾ</h1>
+        <h1 className="font-display font-black text-3xl"> Vehicles / വാഹനങ്ങൾ</h1>
         <div className="w-24" />
       </div>
 
