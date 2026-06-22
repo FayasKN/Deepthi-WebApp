@@ -35,10 +35,12 @@ const config: Config = {
         module: {
           alphabet: "#7C6FE0",  // Purple
           numbers: "#4A90D9",   // Blue
+          addition: "#E84393",  // Pink
           animals: "#E85D75",   // Coral
           plants: "#52C07C",    // Green
           routine: "#F5A623",   // Orange
           manners: "#9B59B6",   // Violet
+          vehicles: "#16A085",  // Teal
         },
       },
       fontSize: {
