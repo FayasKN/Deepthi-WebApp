@@ -186,18 +186,18 @@ export interface VehicleItem {
 }
  
 export const vehiclesData: VehicleItem[] = [
-  { id: "car",        name_en: "Car",         emoji: "🚗", image: "/images/vehicles/car.png",        audio_en: "/audio/en/car.mp3" },
-  { id: "bus",        name_en: "Bus",         emoji: "🚌", image: "/images/vehicles/bus.png",        audio_en: "/audio/en/bus.mp3" },
-  { id: "train",      name_en: "Train",       emoji: "🚂", image: "/images/vehicles/train.png",      audio_en: "/audio/en/train.mp3" },
-  { id: "bicycle",    name_en: "Bicycle",     emoji: "🚲", image: "/images/vehicles/bicycle.png",    audio_en: "/audio/en/bicycle.mp3" },
-  { id: "truck",      name_en: "Truck",       emoji: "🚚", image: "/images/vehicles/truck.png",      audio_en: "/audio/en/truck.mp3" },
-  { id: "airplane",   name_en: "Airplane",    emoji: "✈️", image: "/images/vehicles/airplane.png",   audio_en: "/audio/en/airplane.mp3" },
-  { id: "boat",       name_en: "Boat",        emoji: "⛵", image: "/images/vehicles/boat.png",       audio_en: "/audio/en/boat.mp3" },
-  { id: "ambulance",  name_en: "Ambulance",   emoji: "🚑", image: "/images/vehicles/ambulance.png",  audio_en: "/audio/en/ambulance.mp3" },
-  { id: "firetruck",  name_en: "Fire Truck",  emoji: "🚒", image: "/images/vehicles/firetruck.png",  audio_en: "/audio/en/firetruck.mp3" },
-  { id: "helicopter", name_en: "Helicopter",  emoji: "🚁", image: "/images/vehicles/helicopter.png", audio_en: "/audio/en/helicopter.mp3" },
-  { id: "motorcycle", name_en: "Motorcycle",  emoji: "🏍️", image: "/images/vehicles/motorcycle.png", audio_en: "/audio/en/motorcycle.mp3" },
-  { id: "tractor",    name_en: "Tractor",     emoji: "🚜", image: "/images/vehicles/tractor.png",    audio_en: "/audio/en/tractor.mp3" },
+  { id: "car",        name_en: "Car",         emoji: "🚗", image: "/images/vehicles/car.jpg",        audio_en: "/audio/en/car.mp3" },
+  { id: "bus",        name_en: "Bus",         emoji: "🚌", image: "/images/vehicles/bus.jpg",        audio_en: "/audio/en/bus.mp3" },
+  { id: "train",      name_en: "Train",       emoji: "🚂", image: "/images/vehicles/train.jpg",      audio_en: "/audio/en/train.mp3" },
+  { id: "bicycle",    name_en: "Bicycle",     emoji: "🚲", image: "/images/vehicles/bicycle.jpg",    audio_en: "/audio/en/bicycle.mp3" },
+  { id: "truck",      name_en: "Truck",       emoji: "🚚", image: "/images/vehicles/truck.jpg",      audio_en: "/audio/en/truck.mp3" },
+  { id: "airplane",   name_en: "Airplane",    emoji: "✈️", image: "/images/vehicles/airplane.jpg",   audio_en: "/audio/en/airplane.mp3" },
+  { id: "boat",       name_en: "Boat",        emoji: "⛵", image: "/images/vehicles/boat.jpg",       audio_en: "/audio/en/boat.mp3" },
+  { id: "ambulance",  name_en: "Ambulance",   emoji: "🚑", image: "/images/vehicles/ambulance.jpg",  audio_en: "/audio/en/ambulance.mp3" },
+  { id: "firetruck",  name_en: "Fire Truck",  emoji: "🚒", image: "/images/vehicles/firetruck.jpg",  audio_en: "/audio/en/firetruck.mp3" },
+  { id: "helicopter", name_en: "Helicopter",  emoji: "🚁", image: "/images/vehicles/helicopter.jpg", audio_en: "/audio/en/helicopter.mp3" },
+  { id: "motorcycle", name_en: "Motorcycle",  emoji: "🏍️", image: "/images/vehicles/motorcycle.jpg", audio_en: "/audio/en/motorcycle.mp3" },
+  { id: "tractor",    name_en: "Tractor",     emoji: "🚜", image: "/images/vehicles/tractor.jpg",    audio_en: "/audio/en/tractor.mp3" },
 ];
 
 // Module registry — used by Home screen and routing
