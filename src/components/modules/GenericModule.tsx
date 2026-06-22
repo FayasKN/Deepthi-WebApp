@@ -48,12 +48,12 @@ export default function GenericModule({
 
   return (
     <div className="min-h-screen bg-bg-soft flex flex-col">
-      <div className={`${color} text-white px-8 py-5 flex items-center justify-between shadow-md`}>
+      <div className="bg-module-addition text-white px-4 md:px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md">
         <button onClick={onBack} className="text-white text-2xl font-bold opacity-80 hover:opacity-100 min-h-0 min-w-0 px-3 py-2">
           ← Back
         </button>
         <h1 className="font-display font-black text-3xl">
-          {emoji} {title_en} / {title_ml}
+           {title_en} / {title_ml}
         </h1>
         <div className="w-24" />
       </div>
@@ -95,7 +95,7 @@ export default function GenericModule({
         </AnimatePresence>
       </div>
 
-      <div className="px-8 py-6 border-t border-gray-200 bg-white">
+      <div className="px-8 py-6 border-t border-gray-200 bg-white ">
         <NavControls
           onPrev={() => index > 0 && setIndex((i) => i - 1)}
           onNext={goNext}
