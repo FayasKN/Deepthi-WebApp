@@ -48,7 +48,7 @@ export default function GenericModule({
 
   return (
     <div className="min-h-screen bg-bg-soft flex flex-col">
-      <div className="bg-module-addition text-white px-4 md:px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md">
+      <div className={`${color} text-white px-4 md:px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md`}>
         <button onClick={onBack} className="text-white text-2xl font-bold opacity-80 hover:opacity-100 min-h-0 min-w-0 px-3 py-2">
           ← Back
         </button>

@@ -2,8 +2,9 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { additionData, AdditionItem } from "@/data/modules";
+import { additionData } from "@/data/modules";
 import ProgressBar from "@/components/ui/ProgressBar";
+import NavControls from "@/components/ui/NavControls";
 import Celebration from "@/components/animations/Celebration";
 
 interface AdditionModuleProps {
@@ -17,12 +18,12 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
   const [locked, setLocked] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
   const [showModuleCelebration, setShowModuleCelebration] = useState(false);
+  const [shuffledOptions, setShuffledOptions] = useState<number[]>([]);
 
   const item = additionData[index];
   const isLast = index === additionData.length - 1;
 
   // Shuffle options fresh each time item changes
-  const [shuffledOptions, setShuffledOptions] = useState<number[]>([]);
   useEffect(() => {
     setShuffledOptions([...item.options].sort(() => Math.random() - 0.5));
     setSelected(null);
@@ -31,10 +32,13 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
   }, [index]);
 
   const advanceToNext = useCallback(() => {
+    setSelected(null);
+    setResult(null);
     if (isLast) {
       setShowModuleCelebration(true);
     } else {
       setIndex((i) => i + 1);
+      setTimeout(() => setLocked(false), 400);
     }
   }, [isLast]);
 
@@ -51,15 +55,23 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
     }
   };
 
+  const goPrev = () => {
+    if (locked) return;
+    if (index > 0) setIndex((i) => i - 1);
+  };
+
   return (
     <div className="min-h-screen bg-pink-50 flex flex-col">
       {/* Header */}
-      <div className="bg-module-addition text-white px-4 md:px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md">
-        <button onClick={onBack} className="text-white text-2xl font-bold opacity-80 hover:opacity-100 min-h-0 min-w-0 px-3 py-2">
+      <div className="bg-module-addition text-white px-4 md:px-8 py-5 flex items-center justify-between shadow-md">
+        <button
+          onClick={onBack}
+          className="text-white text-2xl font-bold opacity-80 hover:opacity-100 min-h-0 min-w-0 px-3 py-2"
+        >
           ← Back
         </button>
-        <h1 className="font-display font-black text-3xl">Addition / കൂട്ടൽ</h1>
-        <div className="w-24" />
+        <h1 className="font-display font-black text-2xl md:text-3xl">➕ Addition / കൂട്ടൽ</h1>
+        <div className="w-20" />
       </div>
 
       {/* Progress */}
@@ -68,55 +80,67 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
       </div>
 
       {/* Content */}
-      <div className="flex-1 flex flex-col items-center justify-center px-8 gap-8">
+      <div className="flex-1 flex flex-col items-center justify-center px-4 md:px-8 gap-6">
         <AnimatePresence mode="wait">
           <motion.div
             key={item.id}
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.85 }}
-            className="flex flex-col items-center gap-8 w-full max-w-2xl"
+            className="flex flex-col items-center gap-6 w-full max-w-2xl"
           >
-            {/* Equation display */}
+            {/* Equation card */}
             <motion.div
-  className="
-    bg-white
-    rounded-xl3
-    border-4 border-module-addition
-    shadow-xl
-    px-4 sm:px-6 md:px-12
-    py-6 md:py-8
-    flex flex-col sm:flex-row
-    items-center
-    gap-4 md:gap-6
-    w-full
-    max-w-full
-  "
+              className="bg-white rounded-2xl border-4 border-module-addition shadow-xl px-6 py-6 flex flex-row items-center justify-center gap-4 w-full"
               animate={locked ? { scale: [1, 1.04, 1] } : {}}
               transition={{ duration: 0.5 }}
             >
-              {/* Dot grid visual for a */}
+              {/* Number A */}
               <div className="flex flex-col items-center gap-2">
                 <DotGrid count={item.a} color="bg-module-addition" />
-                <span className="text-7xl font-display font-black text-module-addition">{item.a}</span>
+                <span
+                  className="font-black text-module-addition leading-none"
+                  style={{ fontSize: "5rem", fontFamily: "Nunito, sans-serif" }}
+                >
+                  {item.a}
+                </span>
               </div>
 
-              <span className="text-7xl font-display font-black text-gray-400">+</span>
+              <span
+                className="font-black text-gray-400 leading-none"
+                style={{ fontSize: "4rem", fontFamily: "Nunito, sans-serif" }}
+              >
+                +
+              </span>
 
-              {/* Dot grid visual for b */}
+              {/* Number B */}
               <div className="flex flex-col items-center gap-2">
                 <DotGrid count={item.b} color="bg-pink-400" />
-                <span className="text-7xl font-display font-black text-pink-500">{item.b}</span>
+                <span
+                  className="font-black text-pink-500 leading-none"
+                  style={{ fontSize: "5rem", fontFamily: "Nunito, sans-serif" }}
+                >
+                  {item.b}
+                </span>
               </div>
 
-              <span className="text-7xl font-display font-black text-gray-400">=</span>
+              <span
+                className="font-black text-gray-400 leading-none"
+                style={{ fontSize: "4rem", fontFamily: "Nunito, sans-serif" }}
+              >
+                =
+              </span>
 
               {/* Answer slot */}
               <motion.div
                 className={`
-                  w-28 h-28 rounded-xl2 border-4 flex items-center justify-center text-6xl font-display font-black
-                  ${locked ? "border-success bg-green-100 text-success" : "border-dashed border-gray-300 bg-gray-50 text-gray-300"}
+                  w-24 h-24 rounded-xl border-4 flex items-center justify-center font-black leading-none
+                  ${locked
+                    ? "border-success bg-green-100 text-success"
+                    : "border-dashed border-gray-300 bg-gray-50 text-gray-300"
+                  }
                 `}
+                style={{ fontSize: "3.5rem", fontFamily: "Nunito, sans-serif" }}
                 animate={locked ? { scale: [1, 1.15, 1] } : {}}
                 transition={{ duration: 0.4 }}
               >
@@ -124,13 +148,13 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
               </motion.div>
             </motion.div>
 
-            {/* Question */}
+            {/* Question text */}
             <p className="text-2xl font-display font-bold text-gray-600">
-              What is {item.a} + {item.b}? / {item.a} + {item.b} = ?
+              What is {item.a} + {item.b} = ?
             </p>
 
-            {/* Option buttons */}
-            <div className="grid grid-cols-4 gap-4 w-full">
+            {/* Option buttons — same style as Numbers module */}
+            <div className="grid grid-cols-4 gap-3 w-full">
               {shuffledOptions.map((opt) => {
                 const isCorrect = selected === opt && result === "correct";
                 const isWrong = selected === opt && result === "wrong";
@@ -140,15 +164,16 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
                     onClick={() => handleSelect(opt)}
                     disabled={locked && selected !== opt}
                     className={`
-                      rounded-xl2 py-8 text-5xl font-display font-black shadow-md border-4
-                      transition-all
+                      rounded-xl2 py-6 font-black shadow border-4 transition-all leading-none
                       ${isCorrect ? "border-success bg-green-100 text-success" : ""}
-                      ${isWrong ? "border-red-400 bg-red-50 text-red-500" : ""}
-                      ${!selected ? "border-gray-200 bg-white text-gray-800 hover:border-module-addition hover:bg-pink-50" : ""}
+                      ${isWrong   ? "border-red-400 bg-red-50 text-red-500" : ""}
+                      ${!selected  ? "border-gray-200 bg-white text-gray-800 hover:border-module-addition hover:bg-pink-50" : ""}
                       ${locked && selected !== opt ? "opacity-25 cursor-not-allowed" : ""}
                     `}
+                    style={{ fontSize: "3rem", fontFamily: "Nunito, sans-serif" }}
                     whileTap={{ scale: locked ? 1 : 0.92 }}
-                    animate={isWrong ? { x: [-8, 8, -8, 8, 0] } : isCorrect ? { scale: [1, 1.1, 1] } : {}}
+                    animate={isWrong   ? { x: [-8, 8, -8, 8, 0] } :
+                             isCorrect ? { scale: [1, 1.1, 1] } : {}}
                     transition={{ duration: 0.4 }}
                   >
                     {opt}
@@ -160,43 +185,30 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
         </AnimatePresence>
       </div>
 
-      {/* Nav — Prev only (Next unlocks via celebration) */}
-      <div className="px-8 py-6 border-t border-gray-200 bg-white flex items-center justify-between gap-4">
-        <motion.button
-          onClick={() => { if (!locked && index > 0) setIndex((i) => i - 1); }}
-          disabled={index === 0 || locked}
-          whileTap={{ scale: 0.92 }}
-          className="bg-gray-200 text-gray-700 font-display font-bold rounded-xl2 px-8 py-5 text-xl shadow disabled:opacity-30"
-        >
-          ◀ Previous
-        </motion.button>
-
-        <p className="text-gray-400 font-body text-lg">
-          {index + 1} / {additionData.length}
-        </p>
-
-        {/* Next only active after correct answer (not locked by celebration) */}
-        <motion.button
-          onClick={() => { if (!locked) advanceToNext(); }}
-          disabled={!result || result === "wrong" || locked}
-          whileTap={{ scale: 0.92 }}
-          className="bg-success text-white font-display font-bold rounded-xl2 px-8 py-5 text-xl shadow disabled:opacity-30"
-        >
-          {isLast ? "Finish ✅" : "Next ▶"}
-        </motion.button>
+      {/* Nav — same NavControls as other modules, no middle counter */}
+      <div className="px-8 py-6 border-t border-gray-200 bg-white">
+        <NavControls
+          onPrev={goPrev}
+          onNext={advanceToNext}
+          onRepeat={() => { if (!locked) { setSelected(null); setResult(null); } }}
+          hasPrev={index > 0}
+          prevLocked={locked}
+          hasNext={result === "correct" && !locked}
+          nextLabel={isLast ? "Finish ✅" : "Next ▶"}
+        />
       </div>
 
-      {/* Quiz correct celebration */}
+      {/* Quiz correct — auto-advances after celebration */}
       <Celebration
         show={showCelebration}
         type="quiz"
         onDone={() => {
           setShowCelebration(false);
-          setLocked(false);   // unlock Next button after celebration
+          advanceToNext();
         }}
       />
 
-      {/* Module complete celebration */}
+      {/* Module complete */}
       <Celebration
         show={showModuleCelebration}
         type="module"
@@ -206,18 +218,15 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
   );
 }
 
-// Dot grid — visual representation of the number
+// Dot grid — visual dots above each number
 function DotGrid({ count, color }: { count: number; color: string }) {
   const cols = count <= 5 ? count : Math.ceil(count / 2);
   return (
-    <div
-      className="grid gap-2"
-      style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
-    >
+    <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
       {Array.from({ length: count }).map((_, i) => (
         <motion.div
           key={i}
-          className={`w-6 h-6 rounded-full ${color} shadow-sm`}
+          className={`w-5 h-5 rounded-full ${color} shadow-sm`}
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: i * 0.04, type: "spring" }}
