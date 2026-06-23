@@ -41,7 +41,7 @@ const NavBtn = ({
 );
 
 export default function NavControls({
-  onPrev, onNext, onRepeat, hasPrev, hasNext, prevLocked = false, nextLabel = "Next ▶",
+  onPrev, onNext, onRepeat, hasPrev, hasNext, prevLocked = false, nextLabel = "Next",
 }: NavControlsProps) {
   const [shaking, setShaking] = useState(false);
 
@@ -72,7 +72,7 @@ export default function NavControls({
           }
         `}
       >
-        {prevLocked && shaking ? "Previous" : prevLocked ? " Previous" : "◀ Previous"}
+        {prevLocked && shaking ? "Previous" : prevLocked ? " Previous" : "Previous"}
       </motion.button>
 
       <NavBtn
