@@ -21,7 +21,7 @@ export default function Home() {
   if (activeModule === "vehicles")  return <VehiclesModule onBack={handleBack} />;
   if (activeModule === "animals") return (
     <GenericModule title_en="Animals" title_ml="മൃഗങ്ങൾ" emoji="🐘"
-      color="bg-module-animals" items={animalsData} onBack={handleBack} showAnimalSound />
+      color="bg-module-animals" items={animalsData} onBack={handleBack} showAnimalSound />  
   );
   if (activeModule === "plants") return (
     <GenericModule title_en="Plants" title_ml="സസ്യങ്ങൾ" emoji="🌿"
@@ -96,7 +96,7 @@ function ModuleCard({ module, index, onClick }: { module: Module; index: number;
       whileHover={{ scale: 1.05, y: -4 }}
       whileTap={{ scale: 0.96 }}
       className={`
-        ${module.color} ${module.textColor}
+        ${module.color} ${module.textColor} 
         rounded-xl3 p-5 flex flex-col items-center gap-3
         shadow-lg hover:shadow-xl transition-shadow
         min-h-[170px] w-full overflow-hidden

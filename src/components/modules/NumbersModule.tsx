@@ -28,11 +28,13 @@ export default function NumbersModule({ onBack }: NumbersModuleProps) {
   const advanceToNext = useCallback(() => {
     setQuizAnswer(null);
     setQuizResult(null);
-    setLocked(false);
     if (isLast) {
+      setLocked(false);
       onBack();
     } else {
       setIndex((i) => i + 1);
+      // Keep locked=true until new item is mounted, then release
+      setTimeout(() => setLocked(false), 400);
     }
   }, [isLast, onBack]);
 
@@ -67,11 +69,11 @@ export default function NumbersModule({ onBack }: NumbersModuleProps) {
 
   return (
     <div className="min-h-screen bg-blue-50 flex flex-col">
-     <div className="bg-module-addition text-white px-4 md:px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-md">
+      <div className="bg-module-numbers text-white px-8 py-5 flex items-center justify-between shadow-md">
         <button onClick={onBack} className="text-white text-2xl font-bold opacity-80 hover:opacity-100 min-h-0 min-w-0 px-3 py-2">
           ← Back
         </button>
-        <h1 className="font-display font-black text-3xl">Number / അക്കങ്ങൾ</h1>
+        <h1 className="font-display font-black text-3xl">🔢 Number Learning / അക്കങ്ങൾ</h1>
         <div className="w-24" />
       </div>
 
@@ -162,7 +164,7 @@ export default function NumbersModule({ onBack }: NumbersModuleProps) {
             setQuizResult(null);
           }}
           hasPrev={index > 0}
-          // FIX: disable Next visually while celebration is playing
+          prevLocked={locked}
           hasNext={!locked}
         />
       </div>

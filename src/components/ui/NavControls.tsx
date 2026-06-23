@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface NavControlsProps {
@@ -8,6 +9,7 @@ interface NavControlsProps {
   onRepeat: () => void;
   hasPrev: boolean;
   hasNext: boolean;
+  prevLocked?: boolean;   // show red ❌ shake instead of greyed-out disabled
   nextLabel?: string;
 }
 
@@ -39,19 +41,39 @@ const NavBtn = ({
 );
 
 export default function NavControls({
-  onPrev, onNext, onRepeat, hasPrev, hasNext, nextLabel = "Next ▶",
+  onPrev, onNext, onRepeat, hasPrev, hasNext, prevLocked = false, nextLabel = "Next ▶",
 }: NavControlsProps) {
+  const [shaking, setShaking] = useState(false);
+
+  const handlePrev = () => {
+    if (prevLocked) {
+      // Show red shake feedback instead of doing nothing
+      setShaking(true);
+      setTimeout(() => setShaking(false), 600);
+      return;
+    }
+    onPrev();
+  };
+
   return (
     <div className="flex items-center justify-center gap-4 w-full flex-wrap">
-      <NavBtn
-        onClick={onPrev}
-        disabled={!hasPrev}
-        className="bg-gray-200 text-gray-700 hover:bg-gray-300"
+      <motion.button
+        onClick={handlePrev}
+        disabled={!hasPrev && !prevLocked}
+        whileTap={{ scale: 0.9 }}
+        animate={shaking ? { x: [-8, 8, -8, 8, -4, 4, 0] } : {}}
+        transition={{ duration: 0.4 }}
+        className={`
+          rounded-xl2 font-display font-bold text-xl px-8 py-5
+           transition-all duration-150
+          ${prevLocked
+            ? " border-2  cursor-not-allowed"
+            : "bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-30 disabled:cursor-not-allowed"
+          }
+        `}
       >
-        ◀ Previous
-      </NavBtn>
-
-     
+        {prevLocked && shaking ? "Previous" : prevLocked ? " Previous" : "◀ Previous"}
+      </motion.button>
 
       <NavBtn
         onClick={onNext}
