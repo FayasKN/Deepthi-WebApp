@@ -130,7 +130,7 @@ export default function AlphabetModule({ onBack }: AlphabetModuleProps) {
                   transition={{ duration: 1.5, repeat: Infinity }}
                   className="text-5xl"
                 >
-                  🎤 Repeat After Me
+                  Repeat After Me
                 </motion.div>
                 <AudioButton src={item.audio_rp} label="🔊 Play Again" lang="en" />
               </div>
@@ -159,7 +159,7 @@ export default function AlphabetModule({ onBack }: AlphabetModuleProps) {
             onRepeat={repeat}
             hasPrev={index > 0 || phase !== "learn"}
             hasNext={true}
-            nextLabel={phase === "learn" ? "Say Together ▶" : "Quiz Time ▶"}
+            nextLabel={phase === "learn" ? "Say Together" : "Quiz Time"}
           />
         </div>
       )}

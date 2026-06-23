@@ -194,7 +194,7 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
           hasPrev={index > 0}
           prevLocked={locked}
           hasNext={result === "correct" && !locked}
-          nextLabel={isLast ? "Finish ✅" : "Next ▶"}
+          nextLabel={isLast ? "Finish" : "Next "}
         />
       </div>
 

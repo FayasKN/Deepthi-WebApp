@@ -102,7 +102,7 @@ export default function GenericModule({
           onRepeat={() => setIndex(index)}
           hasPrev={index > 0}
           hasNext={true}
-          nextLabel={isLast ? "Finish ✅" : "Next ▶"}
+          nextLabel={isLast ? "Finish" : "Next"}
         />
       </div>
 

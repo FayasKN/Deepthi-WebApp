@@ -84,7 +84,7 @@ export default function VehiclesModule({ onBack }: VehiclesModuleProps) {
           onRepeat={() => setIndex(index)}
           hasPrev={index > 0}
           hasNext={true}
-          nextLabel={isLast ? "Finish ✅" : "Next ▶"}
+          nextLabel={isLast ? "Finish" : "Next"}
         />
       </div>
 
