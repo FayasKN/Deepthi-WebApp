@@ -70,7 +70,7 @@ export default function AdditionModule({ onBack }: AdditionModuleProps) {
         >
           ← Back
         </button>
-        <h1 className="font-display font-black text-2xl md:text-3xl">➕ Addition / കൂട്ടൽ</h1>
+        <h1 className="font-display font-black text-2xl md:text-3xl">Addition / കൂട്ടൽ</h1>
         <div className="w-20" />
       </div>
 
