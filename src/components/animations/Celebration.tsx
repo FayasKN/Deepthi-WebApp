@@ -50,8 +50,8 @@ export default function Celebration({ show, type = "quiz", onDone }: Celebration
 
   const messages =
     type === "module"
-      ? ["🎉 Excellent! 🎉", "Well Done!", "You're a Star! ⭐"]
-      : ["✅ Correct!", "Great Job! 🌟", "Amazing! 🎊", "Super! 👏"];
+      ? ["Excellent!", "Well Done!", "You're a Star!"]
+      : ["Correct!", "Great Job!", "Amazing! ", "Super!"];
 
   const message = messages[Math.floor(Math.random() * messages.length)];
 
