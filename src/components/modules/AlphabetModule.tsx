@@ -123,7 +123,7 @@ export default function AlphabetModule({ onBack }: AlphabetModuleProps) {
                 </h2>
                 <div className="text-9xl">{item.emoji}</div>
                 <p className="text-5xl font-display font-black text-module-alphabet">
-                  "{item.letter_en} for {item.word_en}"
+                  {item.letter_en} "for" {item.word_en}
                 </p>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
