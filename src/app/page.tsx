@@ -47,7 +47,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-        Deepthi Learning Hub
+        Deepthy Learning Hub
         </motion.h1>
         <motion.p
           className="text-2xl text-gray-500 mt-2 malayalam"
