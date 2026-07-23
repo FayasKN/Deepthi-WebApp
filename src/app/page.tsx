@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="text-center py-4 text-gray-400 text-sm font-body">
-        Deepthi Society for Differently-Abled — Shared Classroom Screen
+        Deepthy Society for Differently-Abled — Shared Classroom Screen
       </footer>
     </main>
   );
